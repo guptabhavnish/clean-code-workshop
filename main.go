@@ -9,12 +9,7 @@ func main() {
 
 	dir := "./test"
 
-	duplicateIndex := entryhandler.DuplicateIndex{
-		Duplicates:          make(map[string]string),
-		TotalUniqueFiles:    0,
-		TotalDuplicateFiles: 0,
-		TotalDuplicateSize:  0,
-	}
+	duplicateIndex := entryhandler.NewDuplicateIndex()
 
 	err := duplicateIndex.TraverseDirPath(dir)
 	if err != nil {
